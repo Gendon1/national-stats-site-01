@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Indonesia National Statistics — World Bank WDI indicators 2015–2024, ASEAN comparisons, interactive charts">
+  <meta name="theme-color" content="#0ea5e9">
+  <title>Indonesia National Statistics</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📊</text></svg>">
+</head>
+<body>
+  <a href="#app" class="skip-link">Skip to main content</a>
+  
+  <header>
+    <a href="#/" class="header-brand" aria-label="Indonesia National Statistics - Home">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <path d="M3 3v18h18"/>
+        <path d="m19 9-5 5-4-4-3 3"/>
+      </svg>
+      <div>
+        <h1>Indonesia Statistics</h1>
+        <span>World Bank WDI 2015–2024</span>
+      </div>
+    </a>
+    
+    <div class="header-actions">
+      <div class="search-wrapper">
+        <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <circle cx="11" cy="11" r="8"/>
+          <path d="m21 21-4.3-4.3"/>
+        </svg>
+        <input 
+          type="search" 
+          id="search-input" 
+          class="search-input" 
+          placeholder="Search indicators…" 
+          aria-label="Search indicators"
+          autocomplete="off"
+        >
+        <div id="search-results" class="search-results" role="listbox" aria-label="Search results"></div>
+      </div>
+      
+      <button 
+        id="theme-toggle" 
+        class="theme-toggle" 
+        aria-label="Switch to dark mode"
+        title="Toggle dark mode"
+      >
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+      </button>
+      
+      <button 
+        id="menu-toggle" 
+        class="menu-toggle mobile-nav-toggle" 
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+        aria-controls="sidebar"
+      >
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <line x1="3" y1="12" x2="21" y2="12"/>
+          <line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </button>
+    </div>
+  </header>
+  
+  <div class="main-layout">
+    <nav class="sidebar" id="sidebar" role="navigation" aria-label="Main navigation">
+      <div class="nav-section">
+        <div class="nav-section-title">Browse</div>
+        <ul class="nav-list">
+          <li><a href="#/" class="nav-link" data-path="/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>Home</a></li>
+          <li><a href="#/compare" class="nav-link" data-path="/compare"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>ASEAN Compare</a></li>
+        </ul>
+      </div>
+      
+      <div class="nav-section">
+        <div class="nav-section-title">Categories</div>
+        <ul class="nav-list" id="category-nav"></ul>
+      </div>
+      
+      <div class="nav-section">
+        <div class="nav-section-title">Reference</div>
+        <ul class="nav-list">
+          <li><a href="#/methodology" class="nav-link" data-path="/methodology"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Methodology</a></li>
+          <li><a href="#/sources" class="nav-link" data-path="/sources"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>Sources</a></li>
+          <li><a href="#/glossary" class="nav-link" data-path="/glossary"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22h8a2 2 0 0 0 2-2V6"/><path d="M2 12h20"/><path d="M2 6h20"/><path d="M2 18h20"/></svg>Glossary</a></li>
+        </ul>
+      </div>
+    </nav>
+    
+    <div class="sidebar-overlay" aria-hidden="true"></div>
+    
+    <main id="app" role="main"></main>
+  </div>
+  
+  <footer>
+    <div class="footer-content">
+      <p>Data: World Bank WDI 2024 • 17 indicators • 2015–2024 • Indonesia + ASEAN peers</p>
+      <div class="footer-links">
+        <a href="#/methodology">Methodology</a>
+        <a href="#/sources">Sources</a>
+        <a href="#/glossary">Glossary</a>
+      </div>
+    </div>
+  </footer>
+  
+  <script type="module" src="main.js"></script>
+</body>
+</html>

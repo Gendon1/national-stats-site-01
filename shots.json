@@ -1,0 +1,32 @@
+{
+  "screenshots": [
+    {
+      "file": "1-home.jpg",
+      "view": "homepage",
+      "url": "http://localhost:8080/#/",
+      "size": "1280x720",
+      "description": "Homepage with hero KPIs, featured trend charts, and latest data updates"
+    },
+    {
+      "file": "2-indicator.jpg",
+      "view": "indicator-gdp",
+      "url": "http://localhost:8080/#/indicator/gdp",
+      "size": "1280x720",
+      "description": "GDP indicator page with line chart, 2015-2024 data table, definition, and metadata"
+    },
+    {
+      "file": "3-compare.jpg",
+      "view": "asean-compare",
+      "url": "http://localhost:8080/#/compare",
+      "size": "1280x720",
+      "description": "ASEAN comparison page with peers table, GDP per capita bar chart, and normalized index picker"
+    },
+    {
+      "file": "4-phone.jpg",
+      "view": "homepage-mobile",
+      "url": "http://localhost:8080/#/",
+      "size": "390x844",
+      "description": "Homepage in mobile viewport (390x844) showing responsive layout and collapsed sidebar"
+    }
+  ]
+}
